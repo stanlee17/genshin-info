@@ -41,4 +41,35 @@ body {
   border-radius: 10px;
   width: 90px;
 }
+
+.form {
+  margin: 3rem 0;
+}
+
+.form__search {
+  width: 25%;
+  font-size: 1rem;
+  border: 1px solid #505574;
+  background-color: #111422;
+  color: #b2b4bd;
+  border-radius: 3px;
+  padding: 10px 9px;
+  outline: none;
+}
+
+.form__search::-webkit-input-placeholder {
+  color: #b2b4bd;
+}
+
+.form__search:-ms-input-placeholder {
+  color: #b2b4bd;
+}
+
+.form__search::-ms-input-placeholder {
+  color: #b2b4bd;
+}
+
+.form__search::placeholder {
+  color: #b2b4bd;
+}
 /*# sourceMappingURL=style.css.map */

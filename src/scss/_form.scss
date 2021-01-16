@@ -1,0 +1,18 @@
+.form {
+  margin: 3rem 0;
+
+  &__search {
+    width: 25%;
+    font-size: 1rem;
+    border: 1px solid #505574;
+    background-color: #111422;
+    color: #b2b4bd;
+    border-radius: 3px;
+    padding: 10px 9px;
+    outline: none;
+  }
+
+  &__search::placeholder {
+    color: #b2b4bd;
+  }
+}
