@@ -10,28 +10,48 @@ const Characters = () => {
     dispatch(loadCharacters())
   }, [dispatch])
 
-  const { characters } = useSelector((state) => state.characters)
+  const { characters, filtered } = useSelector((state) => state.characters)
+
+  const charactersList = characters.map((character, index) => (
+    <div className="character" key={index}>
+      <img
+        src={getCharactersIconURL(
+          character.name.toLowerCase(),
+          character.vision.toLowerCase(),
+        )}
+        alt={character.name}
+        className="character__icon"
+      />
+      <h4 className="character__name">
+        {character.name === 'Traveler'
+          ? `${character.name} (${character.vision})`
+          : character.name}
+      </h4>
+    </div>
+  ))
+
+  const filteredList =
+    filtered &&
+    filtered.map((character, index) => (
+      <div className="character" key={index}>
+        <img
+          src={getCharactersIconURL(
+            character.name.toLowerCase(),
+            character.vision.toLowerCase(),
+          )}
+          alt={character.name}
+          className="character__icon"
+        />
+        <h4 className="character__name">
+          {character.name === 'Traveler'
+            ? `${character.name} (${character.vision})`
+            : character.name}
+        </h4>
+      </div>
+    ))
 
   return (
-    <div className="characters">
-      {characters.map((character, index) => (
-        <div className="character" key={index}>
-          <img
-            src={getCharactersIconURL(
-              character.name.toLowerCase(),
-              character.vision.toLowerCase(),
-            )}
-            alt={character.name}
-            className="character__icon"
-          />
-          <h4 className="character__name">
-            {character.name === 'Traveler'
-              ? `${character.name} (${character.vision})`
-              : character.name}
-          </h4>
-        </div>
-      ))}
-    </div>
+    <div className="characters">{filtered ? filteredList : charactersList}</div>
   )
 }
 
