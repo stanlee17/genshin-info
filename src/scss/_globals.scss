@@ -1,8 +1,6 @@
-$primary: #23395b;
-$secondary: #8aa9d0;
-$text-white: #f0f4f9;
-$text-dark-blue: #1d3049;
-$text-blue-greyish: #828c99;
+$primary: #161616;
+$text-white: #f7f7f7;
+$text-black: #1b1b1b;
 
 * {
   padding: 0;
@@ -15,9 +13,7 @@ body {
 }
 
 a {
-  color: $text-dark-blue;
-  font-size: 1.1rem;
-  font-weight: 900;
+  font-size: 1rem;
   text-decoration: none;
 }
 
