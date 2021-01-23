@@ -14,8 +14,14 @@ const Characters = () => {
   const { characters, filtered } = useSelector((state) => state.characters)
 
   const charactersList = characters.map((character, index) => (
-    <Link to={`/characters/${character.name}`}>
-      <div className="character" key={index}>
+    <div className="character" key={index}>
+      <Link
+        to={
+          character.name !== 'Traveler'
+            ? `/characters/${character.name.toLowerCase()}`
+            : `/characters/${character.name.toLowerCase()}-${character.vision.toLowerCase()}`
+        }
+      >
         <img
           src={getCharactersIconURL(
             character.name.toLowerCase(),
@@ -29,27 +35,35 @@ const Characters = () => {
             ? `${character.name} (${character.vision})`
             : character.name}
         </h4>
-      </div>
-    </Link>
+      </Link>
+    </div>
   ))
 
   const filteredList =
     filtered &&
     filtered.map((character, index) => (
       <div className="character" key={index}>
-        <img
-          src={getCharactersIconURL(
-            character.name.toLowerCase(),
-            character.vision.toLowerCase(),
-          )}
-          alt={character.name}
-          className="character__icon"
-        />
-        <h4 className="character__name">
-          {character.name === 'Traveler'
-            ? `${character.name} (${character.vision})`
-            : character.name}
-        </h4>
+        <Link
+          to={
+            character.name !== 'Traveler'
+              ? `/characters/${character.name.toLowerCase()}`
+              : `/characters/${character.name.toLowerCase()}-${character.vision.toLowerCase()}`
+          }
+        >
+          <img
+            src={getCharactersIconURL(
+              character.name.toLowerCase(),
+              character.vision.toLowerCase(),
+            )}
+            alt={character.name}
+            className="character__icon"
+          />
+          <h4 className="character__name">
+            {character.name === 'Traveler'
+              ? `${character.name} (${character.vision})`
+              : character.name}
+          </h4>
+        </Link>
       </div>
     ))
 

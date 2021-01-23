@@ -1,3 +1,9 @@
+$primary: #23395b;
+$secondary: #8aa9d0;
+$text-white: #f0f4f9;
+$text-dark-blue: #1d3049;
+$text-blue-greyish: #828c99;
+
 * {
   padding: 0;
   margin: 0;
@@ -6,16 +12,16 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  background: #111422;
-  color: #e2e5f1;
 }
 
 a {
-  color: #e2e5f1;
+  color: $text-dark-blue;
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-decoration: none;
 }
 
-.App {
+.container {
   max-width: 1440px;
   margin: 0 auto;
-  text-align: center;
 }

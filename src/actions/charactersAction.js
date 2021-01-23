@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { getCharactersURL } from '../api'
+import { getCharactersURL, getCharacterDetails } from '../api'
 
 export const loadCharacters = () => async (dispatch) => {
   const charactersData = await axios.get(getCharactersURL)
@@ -8,6 +8,17 @@ export const loadCharacters = () => async (dispatch) => {
     type: 'FETCH_CHARACTERS',
     payload: {
       characters: charactersData.data,
+    },
+  })
+}
+
+export const loadCharacterDetails = (name) => async (dispatch) => {
+  const characterDetailsData = await axios.get(getCharacterDetails(name))
+
+  dispatch({
+    type: 'LOAD_CHARACTER_DETAILS',
+    payload: {
+      characterDetails: characterDetailsData.data,
     },
   })
 }

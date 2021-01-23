@@ -1,5 +1,6 @@
 const initialState = {
   characters: [],
+  characterDetails: {},
   filtered: [],
 }
 
@@ -9,6 +10,11 @@ const charactersReducer = (state = initialState, action) => {
       return {
         ...state,
         characters: action.payload.characters,
+      }
+    case 'LOAD_CHARACTER_DETAILS':
+      return {
+        ...state,
+        characterDetails: action.payload.characterDetails,
       }
     case 'FILTER_CHARACTERS':
       return {

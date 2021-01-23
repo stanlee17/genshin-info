@@ -1,4 +1,11 @@
 .header {
-  margin: 2rem 0;
-  margin-bottom: 3rem;
+  padding: 2rem 0;
+  background-color: $primary;
+  color: $text-white;
+
+  &__name {
+    color: $text-white;
+    font-weight: 900;
+    font-size: 1.8rem;
+  }
 }
