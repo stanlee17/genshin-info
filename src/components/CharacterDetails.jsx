@@ -18,26 +18,24 @@ const CharacterDetails = () => {
 
   return (
     Object.keys(characterDetails).length && (
-      <div className="character-details">
-        <div className="character-details__icon">
+      <div className="char-details">
+        <div className="char-details__info">
           <img
             src={getCharactersIconURL(
               characterDetails.name.toLowerCase(),
               characterDetails.vision.toLowerCase(),
             )}
+            className="char-details__info-icon"
             alt={characterDetails.name}
           />
+          <div className="char-details__info-vision">
+            <h2>{characterDetails.name}</h2>
+            <h3>{characterDetails.vision}</h3>
+          </div>
         </div>
-        <div className="character-details__info">
-          <h2 className="character-details__info-name">
-            {characterDetails.name}
-          </h2>
-          <p className="character-details__info-desc">
-            {characterDetails.description}
-          </p>
-          <h3 className="character-details_info-vision">
-            {characterDetails.vision} • {characterDetails.weapon}
-          </h3>
+        <div className="char-details__overview">
+          <h2>{characterDetails.name} Overview</h2>
+          <p>{characterDetails.description}</p>
         </div>
       </div>
     )

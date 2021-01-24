@@ -22,6 +22,27 @@
   }
 }
 
-.character-details {
-  display: flex;
+.char-details {
+  margin: 5rem 0;
+
+  &__info {
+    display: flex;
+    align-items: center;
+
+    &-icon {
+      border-radius: 0.7rem;
+    }
+
+    &-vision {
+      padding: 1rem;
+    }
+  }
+
+  &__overview {
+    margin: 3rem 0;
+
+    & p {
+      color: $text-grey;
+    }
+  }
 }
