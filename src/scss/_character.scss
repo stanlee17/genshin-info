@@ -38,11 +38,28 @@
     }
   }
 
-  &__overview {
-    margin: 3rem 0;
+  &__skills,
+  &__passive,
+  &__constellations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-column-gap: 5rem;
+    grid-row-gap: 4rem;
 
-    & p {
-      color: $text-grey;
+    &-content {
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+      padding: 1.5rem 2.5rem 2.5rem 2.5rem;
+      border-radius: 5px;
+
+      & h2,
+      & h3 {
+        text-align: center;
+      }
+
+      & h3 {
+        color: $text-orange;
+        padding-bottom: 0.5rem;
+      }
     }
   }
 }
